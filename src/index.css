@@ -1,0 +1,12 @@
+.MuiOutlinedInput-notchedOutline {
+    text-align: right;
+}
+.MuiInputLabel-outlined {
+    right: 30px;
+    left: auto;
+    transform-origin: top right;
+}
+
+.MuiInputLabel-outlined.MuiInputLabel-shrink {
+    left: auto;
+}

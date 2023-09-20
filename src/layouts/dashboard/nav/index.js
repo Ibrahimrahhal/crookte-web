@@ -122,6 +122,7 @@ export default function Nav({ openNav, onCloseNav }) {
               width: NAV_WIDTH,
               bgcolor: 'background.default',
               borderRightStyle: 'dashed',
+              right: 0,
             },
           }}
         >

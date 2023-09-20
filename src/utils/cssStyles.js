@@ -16,7 +16,7 @@ export function bgBlur(props) {
       '&:before': {
         position: 'absolute',
         top: 0,
-        left: 0,
+        right: 0,
         zIndex: 9,
         content: '""',
         width: '100%',

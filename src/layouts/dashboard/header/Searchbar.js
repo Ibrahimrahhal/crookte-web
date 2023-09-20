@@ -15,7 +15,7 @@ const HEADER_DESKTOP = 92;
 const StyledSearchbar = styled('div')(({ theme }) => ({
   ...bgBlur({ color: theme.palette.background.default }),
   top: 0,
-  left: 0,
+  right: 0,
   zIndex: 99,
   width: '100%',
   display: 'flex',

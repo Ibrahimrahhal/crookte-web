@@ -10,7 +10,6 @@ import typography from './typography';
 import GlobalStyles from './globalStyles';
 import customShadows from './customShadows';
 import componentsOverride from './overrides';
-
 // ----------------------------------------------------------------------
 
 ThemeProvider.propTypes = {
@@ -25,6 +24,7 @@ export default function ThemeProvider({ children }) {
       typography,
       shadows: shadows(),
       customShadows: customShadows(),
+      direction: 'rtl',
     }),
     []
   );

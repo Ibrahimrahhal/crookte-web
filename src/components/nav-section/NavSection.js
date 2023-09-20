@@ -46,7 +46,13 @@ function NavItem({ item }) {
     >
       <StyledNavItemIcon>{icon && icon}</StyledNavItemIcon>
 
-      <ListItemText disableTypography primary={title} />
+      <ListItemText
+        disableTypography
+        primary={title}
+        sx={{
+          textAlign: 'right',
+        }}
+      />
 
       {info && info}
     </StyledNavItem>
