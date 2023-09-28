@@ -54,6 +54,10 @@
     "amman": "عمان",
     "karak": "الكرك",
     "aqaba": "العقبة",
-    "madaba": "مادبا"
+    "madaba": "مادبا",
+    "notFoundPageTitle": "الصفحة غير موجودة | كروكتي",
+    "sorryPageNotFound": "عذرا، الصفحة التي تبحث عنها غير موجودة",
+    "sorryPageYouAreLookingForDoesNotExistOrYouDontHavePermissionToViewIt": "عذرا، الصفحة التي تبحث عنها غير موجودة أو ليس لديك إذن لعرضها",
+    "goBackHome": "العودة إلى الصفحة الرئيسية"
 
 }

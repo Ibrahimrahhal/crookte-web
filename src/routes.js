@@ -10,13 +10,14 @@ import Page404 from './pages/Page404';
 import DashboardAppPage from './pages/DashboardAppPage';
 import UnitRequestsPage from './pages/UnitRequestsPage';
 import ReviewReportRequests from './pages/ReviewReportRequests';
+import ProtectedRoute from './components/protected-route';
 // ----------------------------------------------------------------------
 
 export default function Router() {
   const routes = useRoutes([
     {
       path: '/dashboard',
-      element: <DashboardLayout />,
+      element: <ProtectedRoute Component={DashboardLayout} />,
       children: [
         { element: <Navigate to="/dashboard/app" />, index: true },
         { path: 'app', element: <DashboardAppPage /> },
