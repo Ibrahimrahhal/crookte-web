@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import TokenUtil from '../../utils/token';
 
 const initialState = {
-  isUserLoggedIn: false,
+  isUserLoggedIn: true,
 };
 
 export const counterSlice = createSlice({
