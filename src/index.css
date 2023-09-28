@@ -23,6 +23,8 @@
     direction: ltr !important;
 }
 
+
+
 @keyframes flashingImportant {
     0% {
         border-color: red;
