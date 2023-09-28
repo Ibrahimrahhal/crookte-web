@@ -9,7 +9,7 @@ import LoginPage from './pages/LoginPage';
 import Page404 from './pages/Page404';
 import DashboardAppPage from './pages/DashboardAppPage';
 import UnitRequestsPage from './pages/UnitRequestsPage';
-
+import ReviewReportRequests from './pages/ReviewReportRequests';
 // ----------------------------------------------------------------------
 
 export default function Router() {
@@ -22,7 +22,7 @@ export default function Router() {
         { path: 'app', element: <DashboardAppPage /> },
         { path: 'user', element: <UserPage /> },
         { path: 'unit-requests', element: <UnitRequestsPage /> },
-        { path: 'accident-reports', element: <BlogPage /> },
+        { path: 'accident-reports', element: <ReviewReportRequests /> },
       ],
     },
     {

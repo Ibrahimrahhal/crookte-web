@@ -11,6 +11,18 @@
     left: auto;
 }
 
+.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.MuiSelect-icon {
+    right: auto;
+    left: 10px;
+}
+.react-images__blanket {
+    z-index: 1200 !important;
+}
+
+.react-images__container {
+    direction: ltr !important;
+}
+
 @keyframes flashingImportant {
     0% {
         border-color: red;

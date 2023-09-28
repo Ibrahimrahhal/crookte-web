@@ -6,7 +6,7 @@ import { withScriptjs, GoogleMap, Marker, withGoogleMap } from 'react-google-map
 // components
 import t from '../utils/i18n';
 import Iconify from '../components/iconify';
-
+import SideBar from '../components/side-bar';
 // sections
 // mock
 
@@ -44,7 +44,56 @@ const CardCustom = styled('div')(({ theme }) => ({
     backgroundColor: '#f5f5f5',
   },
 }));
-
+const RenderIcons = () => {
+  return (
+    <>
+      <div
+        style={{
+          width: 35,
+          height: 35,
+          borderRadius: '50%',
+          border: 'solid 1px rgba(255, 99, 71, 0.4)',
+          animation: 'flashingImportant 1s infinite',
+          boxShadow: '0 0 30px rgba(0,0,0,0.05)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Iconify
+          icon="mdi:medical-bag"
+          sx={{
+            width: 25,
+            height: 25,
+            opacity: 0.6,
+          }}
+        />
+      </div>
+      <div
+        style={{
+          width: 35,
+          height: 35,
+          borderRadius: '50%',
+          border: 'solid 1px rgba(255, 99, 71, 0.4)',
+          boxShadow: '0 0 30px rgba(0,0,0,0.05)',
+          display: 'flex',
+          animation: 'flashingImportant 1s infinite',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Iconify
+          icon="mdi:fire"
+          sx={{
+            width: 25,
+            height: 25,
+            opacity: 0.6,
+          }}
+        />
+      </div>
+    </>
+  );
+};
 export default function UnitRequestsPage() {
   return (
     <>
@@ -63,112 +112,7 @@ export default function UnitRequestsPage() {
             gap: 20,
           }}
         >
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              width: 300,
-              height: '75vh',
-              border: 'dashed 1px rgba(0,0,0,0.2)',
-              borderRadius: '20px 2px 2px 20px',
-              boxShadow: '0 0 30px rgba(0,0,0,0.03)',
-              overflow: 'hidden',
-              overflowY: 'auto',
-            }}
-          >
-            <CardCustom>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                }}
-              >
-                <Typography
-                  variant="p"
-                  gutterBottom
-                  sx={{
-                    fontWeight: 'bold',
-                  }}
-                >
-                  {request.initiator.firstName} {request.initiator.lastName}
-                </Typography>
-                <Typography
-                  variant="p"
-                  gutterBottom
-                  sx={{
-                    fontWeight: 'light',
-                    fontSize: '0.8rem',
-                    opacity: 0.6,
-                  }}
-                >
-                  {request.initiator.nationalId}
-                </Typography>
-                <Typography
-                  variant="p"
-                  gutterBottom
-                  sx={{
-                    fontWeight: 'light',
-                    fontSize: '0.8rem',
-                    opacity: 0.6,
-                  }}
-                >
-                  {request.initiator.phoneNumber}
-                </Typography>
-              </div>
-              <div
-                style={{
-                  display: 'flex',
-                  gap: 10,
-                  alignItems: 'center',
-                }}
-              >
-                <div
-                  style={{
-                    width: 35,
-                    height: 35,
-                    borderRadius: '50%',
-                    border: 'solid 1px rgba(255, 99, 71, 0.4)',
-                    animation: 'flashingImportant 1s infinite',
-                    boxShadow: '0 0 30px rgba(0,0,0,0.05)',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}
-                >
-                  <Iconify
-                    icon="mdi:medical-bag"
-                    sx={{
-                      width: 25,
-                      height: 25,
-                      opacity: 0.6,
-                    }}
-                  />
-                </div>
-                <div
-                  style={{
-                    width: 35,
-                    height: 35,
-                    borderRadius: '50%',
-                    border: 'solid 1px rgba(255, 99, 71, 0.4)',
-                    boxShadow: '0 0 30px rgba(0,0,0,0.05)',
-                    display: 'flex',
-                    animation: 'flashingImportant 1s infinite',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}
-                >
-                  <Iconify
-                    icon="mdi:fire"
-                    sx={{
-                      width: 25,
-                      height: 25,
-                      opacity: 0.6,
-                    }}
-                  />
-                </div>
-              </div>
-            </CardCustom>
-          </div>
+          <SideBar data={[{ user: request.initiator }]} onClick={() => {}} renderIconsSection={RenderIcons} />
           <div
             style={{
               flexGrow: 1,

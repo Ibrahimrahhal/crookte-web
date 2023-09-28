@@ -1,6 +1,7 @@
 // component
 import t from '../../../utils/i18n';
 import SvgColor from '../../../components/svg-color';
+import Iconify from '../../../components/iconify';
 
 // ----------------------------------------------------------------------
 
@@ -10,22 +11,22 @@ const navConfig = [
   {
     title: t('dashboard'),
     path: '/dashboard/app',
-    icon: icon('ic_analytics'),
+    icon: <Iconify icon="material-symbols:dashboard" />,
   },
   {
     title: t('users'),
     path: '/dashboard/user',
-    icon: icon('ic_user'),
+    icon: <Iconify icon="clarity:users-solid" />,
   },
   {
     title: t('policeUnitRequests'),
     path: '/dashboard/unit-requests',
-    icon: icon('ic_cart'),
+    icon: <Iconify icon="emojione-monotone:police-car-light" />,
   },
   {
     title: t('pendingAccidentReports'),
     path: '/dashboard/accident-reports',
-    icon: icon('ic_blog'),
+    icon: <Iconify icon="material-symbols:car-crash-rounded" />,
   },
 ];
 
