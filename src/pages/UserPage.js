@@ -30,15 +30,14 @@ import Scrollbar from '../components/scrollbar';
 import { UserListHead, UserListToolbar } from '../sections/@dashboard/user';
 // mock
 import USERLIST from '../_mock/user';
+import t from '../utils/i18n';
 
 // ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
-  { id: 'name', label: 'Name', alignRight: false },
-  { id: 'company', label: 'Company', alignRight: false },
-  { id: 'role', label: 'Role', alignRight: false },
-  { id: 'isVerified', label: 'Verified', alignRight: false },
-  { id: 'status', label: 'Status', alignRight: false },
+  { id: 'name', label: 'الاسم', alignRight: true },
+  { id: 'role', label: 'الرتبة', alignRight: true },
+  { id: 'status', label: 'حالة الحساب', alignRight: true },
   { id: '' },
 ];
 
@@ -149,16 +148,22 @@ export default function UserPage() {
   return (
     <>
       <Helmet>
-        <title> User | Minimal UI </title>
+        <title> {t('userPageTitle')} </title>
       </Helmet>
 
       <Container>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
-            User
+            {t('users')}
           </Typography>
-          <Button variant="contained" startIcon={<Iconify icon="eva:plus-fill" />}>
-            New User
+          <Button variant="contained" disabled startIcon={<Iconify icon="eva:plus-fill" />}>
+            <span
+              style={{
+                marginRight: 10,
+              }}
+            >
+              {t('addUser')}
+            </span>
           </Button>
         </Stack>
 
@@ -189,7 +194,14 @@ export default function UserPage() {
                         </TableCell>
 
                         <TableCell component="th" scope="row" padding="none">
-                          <Stack direction="row" alignItems="center" spacing={2}>
+                          <Stack
+                            direction="row"
+                            alignItems="center"
+                            spacing={2}
+                            sx={{
+                              gap: 1,
+                            }}
+                          >
                             <Avatar alt={name} src={avatarUrl} />
                             <Typography variant="subtitle2" noWrap>
                               {name}
@@ -197,14 +209,10 @@ export default function UserPage() {
                           </Stack>
                         </TableCell>
 
-                        <TableCell align="left">{company}</TableCell>
+                        <TableCell align="right">{role}</TableCell>
 
-                        <TableCell align="left">{role}</TableCell>
-
-                        <TableCell align="left">{isVerified ? 'Yes' : 'No'}</TableCell>
-
-                        <TableCell align="left">
-                          <Label color={(status === 'banned' && 'error') || 'success'}>{sentenceCase(status)}</Label>
+                        <TableCell align="right">
+                          <Label color={(status === 'موقف' && 'error') || 'success'}>{status}</Label>
                         </TableCell>
 
                         <TableCell align="right">
@@ -232,13 +240,13 @@ export default function UserPage() {
                           }}
                         >
                           <Typography variant="h6" paragraph>
-                            Not found
+                            {t('noResultsFound')}
                           </Typography>
 
                           <Typography variant="body2">
-                            No results found for &nbsp;
+                            {t('noResultsFoundDescription')}
+                            &nbsp;
                             <strong>&quot;{filterName}&quot;</strong>.
-                            <br /> Try checking for typos or using complete words.
                           </Typography>
                         </Paper>
                       </TableCell>
@@ -281,12 +289,14 @@ export default function UserPage() {
       >
         <MenuItem>
           <Iconify icon={'eva:edit-fill'} sx={{ mr: 2 }} />
-          Edit
+
+          {t('edit')}
         </MenuItem>
 
         <MenuItem sx={{ color: 'error.main' }}>
           <Iconify icon={'eva:trash-2-outline'} sx={{ mr: 2 }} />
-          Delete
+
+          {t('delete')}
         </MenuItem>
       </Popover>
     </>

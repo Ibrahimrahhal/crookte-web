@@ -17,6 +17,7 @@ import {
   AppCurrentSubject,
   AppConversionRates,
 } from '../sections/@dashboard/app';
+import t from '../utils/i18n';
 
 // ----------------------------------------------------------------------
 
@@ -26,12 +27,12 @@ export default function DashboardAppPage() {
   return (
     <>
       <Helmet>
-        <title> Dashboard | Minimal UI </title>
+        <title> {t('dashboardPageTitle')}</title>
       </Helmet>
 
       <Container maxWidth="xl">
         <Typography variant="h4" sx={{ mb: 5 }}>
-          Hi, Welcome back
+          {t('loginWelcomeBack')}
         </Typography>
 
         <Grid container spacing={3}>

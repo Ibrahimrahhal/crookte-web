@@ -10,3 +10,21 @@
 .MuiInputLabel-outlined.MuiInputLabel-shrink {
     left: auto;
 }
+
+@keyframes flashingImportant {
+    0% {
+        border-color: red;
+        color: red;
+        transform: scale(1);
+    }
+    50% {
+        border-color: black;
+        color: black;
+        transform: scale(1.05);
+    }
+    100% {
+        border-color: red;
+        color: red;
+        transform: scale(1);
+    }
+}
